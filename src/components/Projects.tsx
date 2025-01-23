@@ -8,21 +8,10 @@ import { RiComputerLine } from "react-icons/ri"
 import { Button } from "./ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 import { LottieAnimation } from "@/components/ui/lottie-animation"
-import ongoingAnimation from "@/assets/lottie/ongoing.json"
 import privateAnimation from "@/assets/lottie/private.json"
 import { cn } from "@/lib/utils"
 import { projects, DEFAULT_IMAGE_URL } from "@/data/content"
-
-interface Project {
-    title: string
-    description: string
-    tech: string[]
-    image: string
-    liveUrl?: string
-    githubUrl?: string
-    isPrivate?: boolean
-    status?: "completed" | "ongoing"
-}
+import type { Project } from "@/types"
 
 export default function Projects() {
     const [isLoading, setIsLoading] = useState(false)

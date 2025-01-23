@@ -4,7 +4,7 @@ import Lottie from "lottie-react"
 import { cn } from "@/lib/utils"
 
 interface LottieAnimationProps {
-    animationData: any
+    animationData: object
     className?: string
     loop?: boolean
 }

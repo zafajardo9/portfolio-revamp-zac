@@ -38,7 +38,7 @@ export default function Contact() {
 
             setFormData({ name: '', email: '', message: '' })
 
-        } catch (error) {
+        } catch {
             toast({
                 title: "Error",
                 description: "Something went wrong. Please try again later.",
@@ -112,9 +112,9 @@ export default function Contact() {
                                 <blockquote className="text-xl md:text-2xl font-medium text-secondary italic">
                                     "Programming isn't about what you know; it's about what you can figure out."
                                 </blockquote>
-                                <p className="text-muted-foreground">
-                                    Let's collaborate and build something amazing together. Whether you have a project in mind
-                                    or just want to connect, I'm always open to discussing new opportunities and ideas.
+                                <p>
+                                    Let&apos;s collaborate and build something amazing together. Whether you have a project in mind
+                                    or just want to connect, I&apos;m always open to discussing new opportunities and ideas.
                                 </p>
                             </div>
                         </div>

@@ -3,18 +3,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { workExperiences, interests } from "@/data/content"
 
-interface WorkExperience {
-    title: string
-    company: string
-    period: string
-    description: string[]
-}
-
-interface Interest {
-    title: string
-    description: string
-}
-
 export default function Experience() {
     return (
         <section id="experience" className="py-20 relative">
