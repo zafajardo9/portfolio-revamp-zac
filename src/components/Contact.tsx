@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/c
 import { useState } from "react"
 import { useToast } from "@/hooks/use-toast"
 
+/* eslint-disable react/no-unescaped-entities */
 export default function Contact() {
     const { toast } = useToast()
     const [isLoading, setIsLoading] = useState(false)
