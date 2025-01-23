@@ -7,11 +7,16 @@ import { FaGithub } from "react-icons/fa"
 import { RiComputerLine } from "react-icons/ri"
 import { Button } from "./ui/button"
 import { motion, AnimatePresence } from "framer-motion"
-import { LottieAnimation } from "@/components/ui/lottie-animation"
+import dynamic from 'next/dynamic'
 import privateAnimation from "@/assets/lottie/private.json"
 import { cn } from "@/lib/utils"
 import { projects, DEFAULT_IMAGE_URL } from "@/data/content"
 import type { Project } from "@/types"
+
+// Dynamically import LottieAnimation with SSR disabled
+const LottieAnimation = dynamic(() => import('@/components/ui/lottie-animation').then(mod => mod.LottieAnimation), {
+    ssr: false
+})
 
 export default function Projects() {
     const [isLoading, setIsLoading] = useState(false)

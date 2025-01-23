@@ -20,7 +20,11 @@ export function LottieAnimation({
                 animationData={animationData}
                 loop={loop}
                 style={{ width: '100%', height: '100%' }}
+                rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
             />
         </div>
     )
-} 
+}
+
+// Add a default export for dynamic import
+export default LottieAnimation 

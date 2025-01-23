@@ -43,15 +43,34 @@ export const workExperiences = [
             "Collaborated with cross-functional teams for feature development"
         ]
     },
-    // Add more experiences...
+    // DITO FOR EXPERIENCES
 ]
 
 export const interests = [
     {
-        title: "Artificial Intelligence",
-        description: "Interested in AI and its applications in solving real-world problems."
+        title: "Web Development",
+        description: "Passionate about creating modern web applications using Next.js, React, and other cutting-edge technologies. Love exploring new frameworks and tools that enhance user experience."
     },
-    // Add more interests...
+    {
+        title: "Artificial Intelligence",
+        description: "Fascinated by AI's potential in software development, particularly in code generation, automation, and enhancing developer productivity."
+    },
+    {
+        title: "Mobile Development",
+        description: "Enjoy building cross-platform mobile applications using Flutter and React Native. Interested in creating seamless mobile experiences."
+    },
+    {
+        title: "System Architecture",
+        description: "Love designing scalable and maintainable software architectures. Interested in microservices, cloud computing, and distributed systems."
+    },
+    {
+        title: "Open Source",
+        description: "Passionate about contributing to open-source projects and collaborating with the developer community to create better software."
+    },
+    {
+        title: "DevOps",
+        description: "Interested in CI/CD pipelines, containerization, and automating development workflows to improve team productivity."
+    }
 ]
 
 export const projects = [
@@ -185,4 +204,5 @@ export const projects = [
         isPrivate: false,
         status: "completed" as const,
     }
+    // PROJECTS DITO
 ] 

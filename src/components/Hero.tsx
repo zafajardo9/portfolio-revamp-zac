@@ -62,7 +62,7 @@ export default function Hero() {
                 <div className="flex gap-4 pt-4">
                     <Button
                         variant="outline"
-                        className="border-secondary text-secondary hover:bg-secondary hover:text-background"
+                        className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-background"
                         asChild
                     >
                         <a href={socialLinks.resume} rel="noopener noreferrer">
