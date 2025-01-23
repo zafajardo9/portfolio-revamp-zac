@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 import { useState } from "react"
 import { useToast } from "@/hooks/use-toast"
 
@@ -113,8 +113,7 @@ export default function Contact() {
                                     &quot;Programming isn&apos;t about what you know; it&apos;s about what you can figure out.&quot;
                                 </blockquote>
                                 <p>
-                                    Let&apos;s collaborate and build something amazing together. Whether you have a project in mind
-                                    or just want to connect, I&apos;m always open to discussing new opportunities and ideas.
+                                    Let&apos;s collaborate and build something amazing together...
                                 </p>
                             </div>
                         </div>
