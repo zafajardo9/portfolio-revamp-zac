@@ -110,7 +110,7 @@ export default function Contact() {
                         <div className="bg-secondary/5 p-6 md:p-8 flex items-center">
                             <div className="space-y-4">
                                 <blockquote className="text-xl md:text-2xl font-medium text-secondary italic">
-                                    "Programming isn't about what you know; it's about what you can figure out."
+                                    &quot;Programming isn&apos;t about what you know; it&apos;s about what you can figure out.&quot;
                                 </blockquote>
                                 <p>
                                     Let&apos;s collaborate and build something amazing together. Whether you have a project in mind
