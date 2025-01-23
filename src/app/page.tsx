@@ -1,14 +1,12 @@
-import dynamic from 'next/dynamic'
+"use client"
+
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
+import Navbar from '@/components/Navbar'
 import TechStack from '@/components/TechStack'
 import Footer from '@/components/Footer'
 import Experience from '@/components/Experience'
-
-const Navbar = dynamic(() => import('@/components/Navbar'), {
-  ssr: false
-})
 
 export default function Home() {
   return (
