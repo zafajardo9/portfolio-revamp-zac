@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar'
 import TechStack from '@/components/TechStack'
 import Footer from '@/components/Footer'
 import Experience from '@/components/Experience'
+import GitHubActivity from '@/components/GitHubActivity'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <div className="container mx-auto px-4 relative">
         <Hero />
         <TechStack />
+        <GitHubActivity />
         <Projects />
         <Experience />
         <Contact />
