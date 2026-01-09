@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${quicksand.variable} ${figtree.variable}`}>
+    <html lang="en" className={`${quicksand.variable} ${figtree.variable}`} suppressHydrationWarning>
       <body className={`${quicksand.className} antialiased selection:bg-primary/30`}>
         <ThemeProvider
           attribute="class"
