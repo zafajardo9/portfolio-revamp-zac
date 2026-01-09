@@ -27,11 +27,11 @@ export default function GitHubActivity() {
     async function fetchGitHubData() {
       try {
         const response = await fetch('/api/github')
-        
+
         if (!response.ok) {
           throw new Error('Failed to fetch GitHub data')
         }
-        
+
         const githubData = await response.json()
         setData(githubData)
       } catch (err) {
@@ -48,32 +48,32 @@ export default function GitHubActivity() {
   // Group contributions by month for the heatmap
   const getContributionsByMonth = () => {
     if (!data?.contributions) return []
-    
+
     // Get the last 12 months of data (most relevant)
     const today = new Date()
     const oneYearAgo = new Date()
     oneYearAgo.setFullYear(today.getFullYear() - 1)
-    
+
     // Filter to the last year's data
     const lastYearContributions = data.contributions.filter(contribution => {
       const contributionDate = new Date(contribution.date)
       return contributionDate >= oneYearAgo
     })
-    
+
     return lastYearContributions
   }
 
   const renderHeatmap = () => {
     const contributions = getContributionsByMonth()
     if (!contributions.length) return null
-    
+
     // Group by week for display
     const weeks: Contribution[][] = []
     let currentWeek: Contribution[] = []
-    
+
     // Days of the week (0 = Sunday, 6 = Saturday)
     const dayOfWeek = (date: string) => new Date(date).getDay()
-    
+
     // Group contributions by week
     contributions.forEach((contribution, index) => {
       // Start a new week on Sunday
@@ -86,12 +86,12 @@ export default function GitHubActivity() {
         currentWeek.push(contribution)
       }
     })
-    
+
     // Add the last week
     if (currentWeek.length) {
       weeks.push(currentWeek)
     }
-    
+
     // Render the heatmap
     return (
       <div className="overflow-x-auto py-6">
@@ -101,7 +101,7 @@ export default function GitHubActivity() {
               {week.map((day) => (
                 <div
                   key={`day-${day.date}`}
-                  className="w-3 h-3 m-[2px] rounded-sm hover:ring-1 hover:ring-offset-1 transition-all"
+                  className="w-3 h-3 m-[2px] rounded-sm hover:ring-1 hover:ring-offset-1 transition-all border border-secondary/20"
                   style={{ backgroundColor: day.color }}
                   title={`${day.count} contributions on ${new Date(day.date).toLocaleDateString()}`}
                 />
@@ -117,7 +117,7 @@ export default function GitHubActivity() {
     <section id="github-activity" className="py-20">
       <div className="mb-8">
         <h2 className="text-3xl font-bold tracking-tight text-secondary mb-2">GitHub Activity</h2>
-        <p className="text-muted-foreground">My open source contribution history</p>
+        <p className="text-muted-foreground">Let me flex my activity 💪</p>
       </div>
 
       <Card className="border-none shadow-none bg-secondary/5">
@@ -133,10 +133,10 @@ export default function GitHubActivity() {
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                  <span className="text-secondary font-bold text-lg">{data?.totalContributions || 0}</span> 
+                  <span className="text-secondary font-bold text-lg">{data?.totalContributions || 0}</span>
                   <span className="text-muted-foreground">contributions in the last year</span>
                 </div>
-                <Link 
+                <Link
                   href={socialLinks.github}
                   target="_blank"
                   className="flex items-center gap-2 text-secondary hover:text-accent transition-colors"
@@ -145,11 +145,11 @@ export default function GitHubActivity() {
                   <span>@zafajardo9</span>
                 </Link>
               </div>
-              
+
               <div className="flex justify-center">
                 {renderHeatmap()}
               </div>
-              
+
               <p className="text-center text-muted-foreground text-sm pt-2">
                 Each square represents a day of contribution
               </p>

@@ -7,6 +7,7 @@ import { useState } from "react"
 import { RxHamburgerMenu } from "react-icons/rx"
 import { IoClose } from "react-icons/io5"
 import { motion, AnimatePresence } from "framer-motion"
+import { ModeToggle } from "./ui/mode-toggle"
 
 export default function Navbar() {
     const scrollTo = useScrollTo()
@@ -57,6 +58,7 @@ export default function Navbar() {
                                 Resume
                             </a>
                         </Button>
+                        <ModeToggle />
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -109,7 +111,10 @@ export default function Navbar() {
                                     >
                                         Contact
                                     </button>
-                                    <div className="pt-2 border-t border-secondary/20">
+                                    <div className="pt-2 border-t border-secondary/20 flex flex-col gap-2">
+                                        <div className="flex justify-start">
+                                            <ModeToggle />
+                                        </div>
                                         <Button
                                             variant="outline"
                                             className="w-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-background"

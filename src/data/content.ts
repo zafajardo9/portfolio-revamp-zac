@@ -4,7 +4,8 @@ export const socialLinks = {
     github: "https://github.com/zafajardo9",
     linkedin: "https://linkedin.com/in/zafajardo9/",
     facebook: "https://facebook.com/zafajardo",
-    resume: "https://ik.imagekit.io/23umzxu6uw/Resume/Fajardo,%20Zackery%20Alline%20-%20October-1.pdf?updatedAt=1737615069658"
+    resume: "https://drive.google.com/file/d/1HAvGGCqUDvhDNAEGYwSVDLQBtYUd7YDl/view?usp=sharing"
+
 }
 
 export const personalInfo = {
