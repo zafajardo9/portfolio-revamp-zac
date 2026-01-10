@@ -117,9 +117,8 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background/95 text-foreground backdrop-blur-xl"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background text-foreground backdrop-blur-xl"
+      initial={{ opacity: 1 }}
       exit={{
         opacity: 0,
         y: -120,

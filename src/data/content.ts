@@ -96,6 +96,16 @@ export const projects = [
         status: "ongoing" as const,
     },
     {
+        title: "LMS Educate",
+        description: "A Moodle-inspired learning management system (LMS) for organizing courses, lessons, and learning progress.",
+        tech: ["NextJS", "TailwindCSS", "Vercel"],
+        image: DEFAULT_IMAGE_URL,
+        liveUrl: "https://lms-educate.vercel.app/",
+        githubUrl: "",
+        isPrivate: true,
+        status: "ongoing" as const,
+    },
+    {
         title: "Kippap Portal",
         description: "Kippap Learning website and portal. Needed for kippap flexing its services and goals and user to be able to join with the company's fun interactive way of learning",
         tech: ["PHP", "Laravel", "AWS"],

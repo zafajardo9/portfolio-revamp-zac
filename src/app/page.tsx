@@ -1,13 +1,11 @@
-"use client"
-
-import Hero from '@/components/Hero'
-import Projects from '@/components/Projects'
-import Contact from '@/components/Contact'
-import Navbar from '@/components/Navbar'
-import TechStack from '@/components/TechStack'
-import Footer from '@/components/Footer'
-import Experience from '@/components/Experience'
-import GitHubActivity from '@/components/GitHubActivity'
+import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import Navbar from "@/components/Navbar";
+import TechStack from "@/components/TechStack";
+import Footer from "@/components/Footer";
+import Experience from "@/components/Experience";
+import GitHubActivity from "@/components/GitHubActivity";
 
 export default function Home() {
   return (
@@ -24,5 +22,5 @@ export default function Home() {
       </div>
       <Footer />
     </main>
-  )
+  );
 }
