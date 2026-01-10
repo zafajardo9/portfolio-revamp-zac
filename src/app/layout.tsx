@@ -24,6 +24,9 @@ export const metadata: Metadata = {
         ? `https://${process.env.VERCEL_URL}`
         : "http://localhost:3001")
   ),
+  verification: {
+    google: "EAAodF0He7fXzFVk2y6i9Ce_DRkZBq4RaEeHTRXbofw",
+  },
   title: {
     default: personalInfo.name,
     template: `%s | ${personalInfo.name}`,
