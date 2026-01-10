@@ -184,4 +184,3 @@ function useToast() {
 
 export { useToast, toast }
 
-/* eslint-disable @typescript-eslint/no-unused-vars */

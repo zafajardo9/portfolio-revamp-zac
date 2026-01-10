@@ -31,7 +31,6 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       });
     }, 120);
 
-    let safetyTimeout: number | undefined;
     let completeTimeout: number | undefined;
 
     const waitForWindowLoad = () => {
@@ -91,7 +90,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       didCompleteRef.current = true;
 
       window.clearInterval(timer);
-      if (safetyTimeout) window.clearTimeout(safetyTimeout);
+      window.clearTimeout(safetyTimeout);
 
       void (async () => {
         await ensureMinDuration();
@@ -106,11 +105,11 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
     })();
 
     // Fallback safety timeout in case load event fails or is too slow
-    safetyTimeout = window.setTimeout(handleLoad, 12000);
+    const safetyTimeout = window.setTimeout(handleLoad, 12000);
 
     return () => {
       window.clearInterval(timer);
-      if (safetyTimeout) window.clearTimeout(safetyTimeout);
+      window.clearTimeout(safetyTimeout);
       if (completeTimeout) window.clearTimeout(completeTimeout);
     };
   }, [onComplete]);
