@@ -14,37 +14,114 @@ export const personalInfo = {
     bio: "Passionate about creating elegant solutions to complex problems. Specialized in building modern web applications with cutting-edge technologies."
 }
 
+type MonthDate = {
+    year: number
+    month: number
+}
+
+type ExperiencePeriod = {
+    start: MonthDate
+    end: MonthDate | null
+}
+
+const monthIndex = (date: MonthDate) => date.year * 12 + (date.month - 1)
+
+const getCurrentMonthIndex = () => {
+    const now = new Date()
+    return now.getFullYear() * 12 + now.getMonth()
+}
+
+const calculateTotalExperienceMonths = (periods: ExperiencePeriod[]) => {
+    const intervals = periods
+        .map((p) => {
+            const start = monthIndex(p.start)
+            const endExclusive = p.end ? monthIndex(p.end) + 1 : getCurrentMonthIndex() + 1
+            return { start, endExclusive }
+        })
+        .filter((i) => i.endExclusive > i.start)
+        .sort((a, b) => a.start - b.start)
+
+    let total = 0
+    let currentStart = -1
+    let currentEndExclusive = -1
+
+    for (const interval of intervals) {
+        if (currentStart === -1) {
+            currentStart = interval.start
+            currentEndExclusive = interval.endExclusive
+            continue
+        }
+
+        if (interval.start <= currentEndExclusive) {
+            currentEndExclusive = Math.max(currentEndExclusive, interval.endExclusive)
+            continue
+        }
+
+        total += currentEndExclusive - currentStart
+        currentStart = interval.start
+        currentEndExclusive = interval.endExclusive
+    }
+
+    if (currentStart !== -1) {
+        total += currentEndExclusive - currentStart
+    }
+
+    return total
+}
+
+const formatExperienceYears = (totalMonths: number) => {
+    const years = totalMonths / 12
+    const roundedYears = Math.max(0, Math.round(years))
+    return `${roundedYears} ${roundedYears === 1 ? "year" : "years"}`
+}
+
 export const workExperiences = [
     {
         title: "Software Engineer",
-        company: "Kippap",
-        period: "May 2024 - Present",
+        company: "Kippap Learning Corporation",
+        period: { start: { month: 5, year: 2024 }, end: null },
         description: [
-            "Developed and maintained web applications using Laravel",
-            "Implemented features for the portal system",
-            "Collaborated teams for mobile and for its integration"
+            "Developed a full Learning Management System and student portal with automated enrollment, payment integration, and synchronized academic workflows.",
+            "Served as the lead developer responsible for system maintenance, continuous updates, codebase refactoring, and ensuring long-term platform stability.",
+            "Managed AWS deployments end-to-end (EC2, S3, RDS), handling production updates, performance tuning, and secure release processes.",
+            "Collaborated with cross-functional teams to redesign internal processes, improving administrative efficiency and overall user experience.",
+            "Participated in Agile Scrum ceremonies, contributing to iterative releases, sprint planning, and collaborative problem-solving.",
+            "Led research and implementation of EdTech solutions while enhancing SEO performance and strengthening the company’s digital presence."
         ]
     },
     {
-        title: "Developer",
-        company: "Freelance",
-        period: "Present",
+        title: "Fullstack Developer",
+        company: "Xgen Enterprises",
+        period: { start: { month: 1, year: 2025 }, end: { month: 8, year: 2025 } },
         description: [
-            "Open to any projects",
-            "Supporting my clients in their projects",
+            "Delivered a complete MRP platform with multi-role access, real-time inventory tracking, automated reordering, and dynamic BOM management.",
+            "Designed and implemented quality control features including defect tracking, supplier oversight, and QR-based purchase order workflows.",
+            "Built real-time analytics dashboards and a client-facing portal that enhanced order transparency and operational reporting.",
+            "Worked closely with stakeholders in an Agile environment to refine requirements and ensure smooth system adoption across teams."
         ]
     },
     {
         title: "Web Developer Intern",
         company: "Asceoft",
-        period: "March 2024 - May 2024",
+        period: { start: { month: 3, year: 2024 }, end: { month: 5, year: 2024 } },
         description: [
-            "Developed and maintained web applications using Next.js",
-            "Implemented responsive designs and user interfaces",
-            "Collaborated with cross-functional teams for feature development"
+            "Built responsive, high-performance web interfaces that improved load speeds and UI consistency across multiple projects.",
+            "Contributed to team repositories through issue resolution, code reviews, and collaborative pull requests.",
+            "Supported deployment, testing, and release activities while applying Agile and SDLC practices in fast-paced sprints.",
+            "Strengthened team productivity by learning modern development workflows, version control, and collaborative development practices."
         ]
     },
     // DITO FOR EXPERIENCES
+]
+
+const totalExperienceMonths = calculateTotalExperienceMonths(workExperiences.map((w) => w.period))
+const totalExperienceYearsLabel = formatExperienceYears(totalExperienceMonths)
+
+export const experienceQnA = [
+    {
+        question: "Relevant skills and years of experience",
+        answer: `${totalExperienceYearsLabel} of professional experience building web and full-stack applications. Strongest in React, Next.js, TypeScript, Tailwind CSS, Laravel, AWS, and PostgreSQL.`
+    }
 ]
 
 export const interests = [
