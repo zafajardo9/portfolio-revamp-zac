@@ -152,6 +152,26 @@ export const interests = [
 ]
 
 export const projects = [
+        {
+        title: "Aeternum HR Solutions",
+        description: "An HR solutions platform focused on connecting businesses with the right talent through a modern and streamlined hiring experience.",
+        tech: ["NextJS", "Shadcn", "Tailwindcss", "Vercel",],
+        image: "https://ik.imagekit.io/eioac6dye/portfolio/Aeternum-Talent-Solutions-Where-Talent-Meets-Excellence-03-24-2026_01_47_PM.png",
+        liveUrl: "https://aeternum-zeta.vercel.app/",
+        githubUrl: "",
+        isPrivate: false,
+        status: "done" as const,
+    },
+    {
+        title: "ATLAS Learning Management System",
+        description: "A learning management system designed to organize courses, manage students, and deliver a structured online learning experience.",
+        tech: ["NextJS", "Prisma", "Vercel", "Tanstack AI", "Shadcn", "Tailwindcss", "PostgreSQL"],
+        image: "https://ik.imagekit.io/eioac6dye/portfolio/Learning-Management-System-ATLAS-03-24-2026_01_47_PM.png",
+        liveUrl: "https://lms-educate.vercel.app/",
+        githubUrl: "",
+        isPrivate: false,
+        status: "ongoing" as const,
+    },
     {
         title: "MRP system",
         description: "A system that will have have many feature suce as inventory, sales, purchase, and many more with a POS system.",
